@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="play">Jogar</string>
+    <string name="setting">Configuração</string>
+    <string name="sound">Som</string>
+    <string name="music">Música</string>
+    <string name="language">Português</string>
+    <string name="ok">OK</string>
+    <string name="shop">LOJA</string>
+    <string name="leaderboard">Digite o nome do jogador</string>
+    <string name="select">Selecionar</string>
+    <string name="resume">Cardápio</string>
+    <string name="pause">Pausa</string>
+    <string name="enter_play_name">digite o nome do jogador</string>
+    <string name="score_format">Sua pontuação: %d\nSua melhor pontuação: %d</string>
+    <string name="home">Lar</string>
+    <string name="save">Salvar</string>
+    <string name="gameover">Game Over</string>
+    <string name="game_begin">Clique para iniciar o jogo</string>
+
+</resources>

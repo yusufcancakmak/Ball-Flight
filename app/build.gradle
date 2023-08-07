@@ -1,0 +1,100 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
+}
+
+android {
+    namespace 'com.ballflight6463'
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.ballflight6463"
+        minSdk 24
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildFeatures {
+        viewBinding true
+        dataBinding true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField "String", "BASE_URL","\"https://www.google.com/release/\""
+        }
+        debug{
+            buildConfigField "String", "BASE_URL","\"https://www.google.com/debug/\""
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    kapt {
+        correctErrorTypes = true
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.core:core-ktx:1.7.0'
+    implementation 'androidx.appcompat:appcompat:1.3.0'
+    implementation 'com.google.android.material:material:1.4.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation 'androidx.databinding:databinding-runtime:4.2.2'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+
+
+    implementation "com.google.dagger:hilt-android:${hiltVersion}"
+    kapt "com.google.dagger:hilt-compiler:${hiltVersion}"
+
+
+    implementation "androidx.navigation:navigation-fragment-ktx:${navigationComponentVersion}"
+    implementation "androidx.navigation:navigation-ui-ktx:${navigationComponentVersion}"
+
+    implementation "com.squareup.retrofit2:retrofit:${retrofitVersion}"
+    implementation "com.squareup.retrofit2:converter-gson:${retrofitVersion}"
+
+    implementation "com.google.code.gson:gson:${gsonVersion}"
+
+    implementation(platform("com.squareup.okhttp3:okhttp-bom:${okHttpVersion}"))
+    implementation("com.squareup.okhttp3:okhttp")
+    implementation("com.squareup.okhttp3:logging-interceptor")
+
+    implementation 'com.pixplicity.easyprefs:EasyPrefs:1.10.0'
+    implementation 'com.akexorcist:localization:1.2.11'
+
+    //room
+    implementation("androidx.room:room-runtime:${roomVersion}")
+    annotationProcessor "androidx.room:room-compiler:${roomVersion}"
+
+    // To use Kotlin annotation processing tool (kapt)
+    kapt("androidx.room:room-compiler:${roomVersion}")
+    androidTestImplementation("androidx.room:room-testing:${roomVersion}")
+    // To use Kotlin Symbolic Processing (KSP)
+
+    // optional - Kotlin Extensions and Coroutines support for Room
+    implementation("androidx.room:room-ktx:${roomVersion}")
+
+
+    def lifecycle_version = "2.4.0"
+
+    // ViewModel
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version")
+    // LiveData
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version")
+    // Lifecycles only (without ViewModel or LiveData)
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version")
+}

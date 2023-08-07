@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data class="FragmentSettingBinding">
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_corner"
+        >
+        <ImageView
+            android:id="@+id/iv_dialog_bg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/dialog_up_bg"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/iv_dialog_bg"
+            android:fontFamily="@font/montseratt"
+            android:layout_alignTop="@+id/iv_dialog_bg"
+            android:layout_alignEnd="@+id/iv_dialog_bg"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_alignBottom="@+id/iv_dialog_bg"
+            android:textAlignment="center"
+            android:text="@string/setting"
+
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+        <ImageView
+            android:id="@+id/iv_dialog_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/dialog_midd_bg"
+            android:layout_below="@+id/iv_dialog_bg"
+            android:layout_centerHorizontal="true"/>
+        <TextView
+            android:id="@+id/tv_dialog_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/iv_dialog_close"
+            android:fontFamily="@font/montseratt"
+            android:layout_alignTop="@+id/iv_dialog_close"
+            android:layout_alignEnd="@+id/iv_dialog_close"
+            android:layout_marginTop="3dp"
+
+            android:textAlignment="center"
+            android:text="@string/sound"
+
+            android:textColor="#5DE3FF"
+            android:textSize="39sp"
+            android:textStyle="bold" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/switch_dialog_sound"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_dialog_close"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="3dp"
+            android:thumb="@drawable/ic_switch_dat"
+            app:track="@drawable/ic_switch_thumb"/>
+        <TextView
+            android:id="@+id/tv_music"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:fontFamily="@font/montseratt"
+            android:layout_below="@+id/switch_dialog_sound"
+           android:layout_centerHorizontal="true"
+            android:layout_marginTop="3dp"
+
+            android:textAlignment="center"
+            android:text="@string/music"
+
+            android:textColor="#5DE3FF"
+            android:textSize="39sp"
+            android:textStyle="bold" />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/switch_dialog_music"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_music"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="3dp"
+            android:thumb="@drawable/ic_switch_dat"
+            app:track="@drawable/ic_switch_thumb"/>
+
+        <ImageView
+            android:id="@+id/iv_language_bg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_language_bg"
+            android:layout_below="@+id/switch_dialog_music"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"/>
+        <TextView
+            android:id="@+id/tv_language"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/iv_language_bg"
+            android:layout_alignEnd="@+id/iv_language_bg"
+            android:layout_alignStart="@+id/iv_language_bg"
+            android:layout_alignBottom="@+id/iv_language_bg"
+            android:layout_centerHorizontal="true"
+            android:textSize="20dp"
+            android:paddingEnd="15dp"
+            android:paddingStart="15dp"
+            android:padding="5dp"
+            android:maxLines="1"
+            android:textStyle="bold"
+
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:fontFamily="@font/montseratt"
+            android:text="@string/language"/>
+
+
+
+        <ImageView
+            android:id="@+id/iv_ok_bg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/dialog_down_bg"
+            android:layout_below="@+id/iv_dialog_close"
+            android:layout_centerHorizontal="true"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/iv_ok_bg"
+            android:layout_alignEnd="@+id/iv_ok_bg"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            android:layout_alignStart="@+id/iv_ok_bg"
+            android:layout_alignBottom="@+id/iv_ok_bg"
+            android:layout_centerHorizontal="true"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:layout_marginTop="3dp"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:fontFamily="@font/montseratt"
+            android:text="@string/ok"/>
+
+
+
+
+    </RelativeLayout>
+
+
+
+</layout>

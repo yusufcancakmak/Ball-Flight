@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="play">Играть</string>
+    <string name="setting">Настройки</string>
+    <string name="sound">Звук</string>
+    <string name="music">Музыка</string>
+    <string name="language">Русский</string>
+    <string name="ok">ХОРОШО</string>
+    <string name="shop">Магазин</string>
+    <string name="leaderboard">Таблица лидеров</string>
+    <string name="select">Выбрать</string>
+    <string name="resume">Резюме</string>
+    <string name="pause">Пауза</string>
+    <string name="enter_play_name">Введите имя игрока</string>
+    <string name="score_format">Твой счет: %d\nВаш лучший результат: %d</string>
+    <string name="home">Дом</string>
+    <string name="save">Сохранять</string>
+    <string name="gameover">Игра закончена</string>
+    <string name="game_begin">Нажмите, чтобы начать игру</string>
+</resources>
