@@ -99,6 +99,9 @@ class PlayActivity : BaseInjectionActivity<ActivityPlayBinding, PlayViewModel>()
     private var blacksquarePassed = false
     private var isGameOverDialogShown = false
 
+    private var gameOverSound: MediaPlayer? = null
+
+
 
 
 
@@ -175,6 +178,12 @@ class PlayActivity : BaseInjectionActivity<ActivityPlayBinding, PlayViewModel>()
         gamestop.setOnClickListener {
             gameStop()
         }
+        gameOverSound = MediaPlayer.create(this, R.raw.ms_gameover)
+        gameOverSound?.setOnCompletionListener {
+            // Release the media player once the sound has finished playing
+            gameOverSound?.release()
+            gameOverSound = null
+        }
         cl.setOnTouchListener { _, motionEvent ->
             if (initialcontrol) {
                 when (motionEvent.action) {
@@ -216,6 +225,7 @@ class PlayActivity : BaseInjectionActivity<ActivityPlayBinding, PlayViewModel>()
             }
             true
         }
+
 
 
     }
@@ -443,6 +453,7 @@ class PlayActivity : BaseInjectionActivity<ActivityPlayBinding, PlayViewModel>()
 
         if (oyunBitti) {
 
+            gameOverSound?.start()
             timer?.cancel()
             timer = null
             val bestscore=CharacterManager.bestScore
@@ -509,6 +520,7 @@ class PlayActivity : BaseInjectionActivity<ActivityPlayBinding, PlayViewModel>()
 
             // binding.homeIc.isClickable = false
         }
+
         alert.show()
     }
 

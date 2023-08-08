@@ -3,6 +3,7 @@ package com.ballflight6463.ui.setting
 import android.app.Dialog
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
+import android.media.MediaPlayer
 import android.os.Bundle
 import android.text.Layout
 import androidx.fragment.app.Fragment
@@ -20,6 +21,7 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class SettingFragment : BaseInjectionDialogFragment<FragmentSettingBinding,SettingViewModel>() {
+
     override fun getLayoutRes(): Int =R.layout.fragment_setting
 
     override fun getViewModelClass(): Class<SettingViewModel> = SettingViewModel::class.java
@@ -45,7 +47,7 @@ class SettingFragment : BaseInjectionDialogFragment<FragmentSettingBinding,Setti
         }
         binding.switchDialogSound.isChecked = Utils.isSoundActive(requireContext())
         binding.switchDialogSound.setOnCheckedChangeListener { _, isChecked ->
-            Utils.soundActive = !Utils.soundActive
+            Utils.soundActive = isChecked
             Prefs.putBoolean("soundActive",Utils.soundActive)
 
 
@@ -54,18 +56,22 @@ class SettingFragment : BaseInjectionDialogFragment<FragmentSettingBinding,Setti
 
         binding.switchDialogMusic.isChecked = Utils.isMusicActive(requireContext())
         binding.switchDialogMusic.setOnCheckedChangeListener { _, isChecked ->
-            Utils.musicActive = !Utils.musicActive
-
-            if (Utils.soundActive) {
-                Prefs.putBoolean("musicActive",Utils.musicActive)
-                Utils.startMusic(requireContext())
-            }else {
-
-            }
+            Utils.musicActive = isChecked
 
 
+                Prefs.putBoolean("musicActive", Utils.musicActive)
+                if (Utils.musicActive) {
+                    Utils.startMusic(requireContext())
+                } else {
+                    Utils.stopMusic(requireContext())
+                }
 
-            }
+
+        }
+        binding.tvOk.setOnClickListener {
+            dismiss()
+        }
+    }
 
 
     }
@@ -74,4 +80,3 @@ class SettingFragment : BaseInjectionDialogFragment<FragmentSettingBinding,Setti
 
 
 
-}

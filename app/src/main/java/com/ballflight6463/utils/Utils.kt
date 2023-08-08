@@ -20,10 +20,15 @@ class Utils {
             val intent = Intent(context, BackgroundSoundService::class.java)
             if (musicActive) {
                 context.startService(intent)
-            } else {
+            } /*else {
                 context.stopService(intent)
-            }
+            }*/
         }
+        fun stopMusic(context: Context) {
+            val intent = Intent(context, BackgroundSoundService::class.java)
+            context.stopService(intent)
+        }
+
         fun isSoundActive(context: Context): Boolean {
             return Prefs.getBoolean("soundActive", true)
         }
